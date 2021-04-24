@@ -14,5 +14,12 @@ public class StringCalculatorTest {
 	public void setup(){
 		st = new StringCalculator();
 	}
-
+	
+	@Test
+	public void testAddEmpty(){
+		
+		String str = "";
+		
+		Assert.assertEquals(0, st.add(str));
+	}
 }
