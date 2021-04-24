@@ -22,4 +22,11 @@ public class StringCalculatorTest {
 		
 		Assert.assertEquals(0, st.add(str));
 	}
+
+    public void testAddOne(){
+		
+		String str = "1";
+		
+		Assert.assertEquals(1, st.add(str));
+	}
 }
