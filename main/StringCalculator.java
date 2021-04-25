@@ -20,7 +20,8 @@ public class StringCalculator {
 	private int findSum(String[] numbers){
 		int sum = 0;
 		for(String i : numbers){
-			sum += Integer.parseInt(i);
+			if (Integer.parseInt(i) <= 1000)
+				sum += Integer.parseInt(i);
 		}
 		return sum;
 	}
