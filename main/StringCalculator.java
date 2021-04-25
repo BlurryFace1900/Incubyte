@@ -2,10 +2,15 @@ package main;
 
 public class StringCalculator {
 
-    private final String delimiter = ",|\n";
+    private static String delimiter;
 	
 	public int add(String number)throws Exception{
 		if (number.isEmpty()) return 0;
+		
+		if (number.startsWith("//"))
+			number = customDelimiter(number);
+		else
+			this.delimiter = ",|\n";
 		
 		findException(number);
 		
@@ -15,6 +20,14 @@ public class StringCalculator {
 		}
 		
 		return Integer.parseInt(number);
+	}
+	
+	private String customDelimiter(String number){
+		Pattern p = Pattern.compile("//(.*)\n(.*)");
+		Matcher m = p.matcher(number);
+		m.matches();
+		this.delimiter = Pattern.quote(m.group(1));
+		return m.group(2);
 	}
 	
 	private int findSum(String[] numbers){
