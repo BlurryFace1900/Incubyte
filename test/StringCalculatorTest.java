@@ -29,4 +29,12 @@ public class StringCalculatorTest {
 		
 		Assert.assertEquals(1, st.add(str));
 	}
+
+    @Test
+	public void testAddTwo(){
+		
+		String str = "1,3";
+		
+		Assert.assertEquals(4, st.add(str));
+	}
 }
