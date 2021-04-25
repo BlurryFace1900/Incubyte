@@ -31,10 +31,18 @@ public class StringCalculatorTest {
 	}
 
     @Test
-	public void testAddTwo(){
+	public void testAddTwoDelimitedByComma(){
 		
 		String str = "1,3";
 		
 		Assert.assertEquals(4, st.add(str));
+	}
+
+    @Test
+	public void testAddTwoDelimitedByNewLine(){
+		
+		String str = "1\n2";
+		
+		Assert.assertEquals(3, st.add(str));
 	}
 }
