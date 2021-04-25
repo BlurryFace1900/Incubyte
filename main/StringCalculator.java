@@ -27,10 +27,13 @@ public class StringCalculator {
 	
 	private void findException(String number) throws Exception{
 		String a[] = number.split(delimiter);
+		List<Integer> list = new ArrayList<Integer>();
 		for(String i : a){
 			if(Integer.parseInt(i) < 0)
-				throw new Exception("Negative number");
+				list.add(Integer.parseInt(i));
 		}
+		if(!list.isEmpty())
+			throw new Exception("Negative number:" + list);
 	}
 
 }

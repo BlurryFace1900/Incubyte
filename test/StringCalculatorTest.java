@@ -61,4 +61,12 @@ public class StringCalculatorTest {
 		
 		st.add(str);
 	}
+
+    @Test
+	public void testIgnoreGreaterThan1000() throws Exception{
+		
+		String str = "1\n4,1005";
+		
+		Assert.assertEquals(5, st.add(str));
+	}
 }
