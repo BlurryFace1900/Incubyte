@@ -53,4 +53,12 @@ public class StringCalculatorTest {
 		
 		Assert.assertEquals(6, st.add(str));
 	}
+
+    @Test(expected=Exception.class)
+	public void testAddNegativeException() throws Exception{
+		
+		String str = "-1";
+		
+		st.add(str);
+	}
 }
