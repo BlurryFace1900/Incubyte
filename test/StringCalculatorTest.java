@@ -45,4 +45,12 @@ public class StringCalculatorTest {
 		
 		Assert.assertEquals(3, st.add(str));
 	}
+
+    @Test
+	public void testAddThreeDelimitedByBoth(){
+		
+		String str = "1\n2,3";
+		
+		Assert.assertEquals(6, st.add(str));
+	}
 }
