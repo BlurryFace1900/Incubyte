@@ -4,21 +4,33 @@ public class StringCalculator {
 
     private final String delimiter = ",|\n";
 	
-	public int add(String number){
-        if(number.length() == 1) return Integer.parseInt(number);
-        if(number.length() > 1){
+	public int add(String number)throws Exception{
+		if (number.isEmpty()) return 0;
+		
+		findException(number);
+		
+		if(number.length() > 1){
 			String a[] = number.split(delimiter);
-			return sum(a);
+			return findSum(a);
 		}
-		return 0;
+		
+		return Integer.parseInt(number);
 	}
-
-    public int sum(String[] numbers){
+	
+	private int findSum(String[] numbers){
 		int sum = 0;
 		for(String i : numbers){
 			sum += Integer.parseInt(i);
 		}
 		return sum;
+	}
+	
+	private void findException(String number) throws Exception{
+		String a[] = number.split(delimiter);
+		for(String i : a){
+			if(Integer.parseInt(i) < 0)
+				throw new Exception("Negative number");
+		}
 	}
 
 }
