@@ -23,6 +23,7 @@ public class StringCalculatorTest {
 		Assert.assertEquals(0, st.add(str));
 	}
 
+    @Test
     public void testAddOne(){
 		
 		String str = "1";
@@ -69,4 +70,13 @@ public class StringCalculatorTest {
 		
 		Assert.assertEquals(5, st.add(str));
 	}
+
+    @Test
+	public void testCustomDelimiter1() throws Exception{
+		
+		String str = "//;\n1;4;8";
+		
+		Assert.assertEquals(13, st.add(str));
+	}
+
 }
